@@ -80,9 +80,9 @@ const sizes = {
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
 camera.position.z = 3
 
-gui.add(camera, 'fov').onChange((val)=> {
+gui.add(camera, 'fov').min(70).max(100).step(0.01).onChange((val)=> {
     camera.fov = val
-    camera.updateMatrix()
+    camera.updateProjectionMatrix()
 })
 
 
